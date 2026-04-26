@@ -1,0 +1,6 @@
+hero,emblem,talent_1,talent_2,max_hp,physical_attack,movement_speed,dmg_skill_1,skill_1_scale_type,skill_1_percentage,skill_1_total_hp_scale,skill_1_multiplier_dmg,skill_1_cd,dmg_skill_2,skill_2_scale_type,skill_2_percentage,skill_2_cd,dmg_skill_3,skill_3_scale_type,skill_3_percentage,skill_3_cd,skill_priority
+Lancelot,Assassin,Thrill,Seasoned Hunter,2549,201,260,350,total,50%,0,0,4,660,extra,120%,11,0,0,0,0,1
+Suyou,Assassin,Thrill,Seasoned Hunter,2549,124,250,625,extra,125%,0,0,8.5,900,extra,100%,8.5,420,extra,120%,8.5,2
+Hayabusa,Assassin,Thrill,Seasoned Hunter,2429,258,280,660,extra,75%,0,0,4,0,extra,30%,16,0,0,0,0,1
+Yi Sun Shin,Assassin,Thrill,Seasoned Hunter,2320,210,270,150,total,40%,0,0,12,260,total,80%,11,0,0,0,0,2
+Fredrinn,Tank,Vitality,Seasoned Hunter,2709,125,270,230,extra,120%,7%,200%,7.5,140,extra,80%,7.5,0,0,0,0,1

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MLBB Jungle Route Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Aplikasi Kalkulasi Rute Jungling</p>
+          <h1>MLBB Jungle Route Lab</h1>
+        </div>
+        <p class="subtitle">
+          Node peta bisa diklik, bisa diaktif/nonaktifkan, lalu dihitung dengan
+          Greedy, Backtracking, atau Hybrid Greedy-Backtracking.
+        </p>
+      </header>
+
+      <main class="layout">
+        <section class="panel controls-panel">
+          <h2>Konfigurasi</h2>
+          <form id="config-form" class="form-grid">
+            <label>
+              Algoritma
+              <select id="algorithm" name="algorithm">
+                <option value="greedy">Greedy</option>
+                <option value="backtracking">Backtracking</option>
+                <option value="hybrid" selected>Hybrid Greedy-Backtracking</option>
+              </select>
+            </label>
+
+            <label>
+              Hero Jungler
+              <select id="hero-select" name="hero"></select>
+            </label>
+
+            <label>
+              Movement Speed
+              <input
+                id="move-speed"
+                name="moveSpeed"
+                type="number"
+                min="220"
+                max="320"
+                step="1"
+                value="260"
+              />
+            </label>
+
+            <label>
+              Target XP
+              <input
+                id="target-xp"
+                name="targetXp"
+                type="number"
+                min="100"
+                max="3000"
+                step="10"
+                value="1000"
+              />
+            </label>
+
+            <label>
+              Maksimal Step
+              <input
+                id="max-steps"
+                name="maxSteps"
+                type="number"
+                min="1"
+                max="14"
+                step="1"
+                value="7"
+              />
+            </label>
+
+            <div class="actions">
+              <button type="submit" class="btn primary">Hitung Rute</button>
+              <button type="button" id="reset-btn" class="btn ghost">
+                Reset Node
+              </button>
+            </div>
+          </form>
+
+          <div class="quick-stats">
+            <div class="stat">
+              <span class="label">Start Node</span>
+              <span id="start-node-label" class="value">Base</span>
+            </div>
+            <div class="stat">
+              <span class="label">Node Aktif</span>
+              <span id="active-count-label" class="value">7</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel map-panel">
+          <h2>Peta Interaktif</h2>
+          <div class="map-frame" id="map-frame" aria-label="Peta MLBB">
+            <img id="map-image" src="../assets/image.png" alt="Peta Mobile Legends" />
+            <svg
+              id="route-layer"
+              class="route-layer"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <marker
+                  id="route-arrow"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="8"
+                  refY="5"
+                  orient="auto"
+                >
+                  <path d="M0,0 L10,5 L0,10 z" fill="#00f5d4"></path>
+                </marker>
+              </defs>
+              <g id="route-path-group"></g>
+            </svg>
+            <div id="nodes-layer" class="nodes-layer"></div>
+          </div>
+          <p class="map-hint">
+            Klik node untuk detail. Double-click node untuk jadikan Start.
+          </p>
+        </section>
+
+        <section class="panel side-panel">
+          <h2>Detail Node</h2>
+          <div id="selected-node-card" class="node-card empty">
+            Pilih node di peta untuk melihat detail.
+          </div>
+          <div class="node-actions">
+            <button id="set-start-btn" class="btn secondary" disabled>
+              Jadikan Start
+            </button>
+            <button id="toggle-node-btn" class="btn secondary" disabled>
+              Nonaktifkan Node
+            </button>
+          </div>
+
+          <h2>Hasil Simulasi</h2>
+          <div id="result-summary" class="result-card empty">
+            Belum ada simulasi.
+          </div>
+
+          <div class="table-wrap">
+            <table id="steps-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Dari</th>
+                  <th>Ke</th>
+                  <th>Arrive</th>
+                  <th>Wait</th>
+                  <th>Finish</th>
+                  <th>Total XP</th>
+                </tr>
+              </thead>
+              <tbody id="steps-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

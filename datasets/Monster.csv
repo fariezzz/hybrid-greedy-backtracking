@@ -1,0 +1,9 @@
+monster_name,creep_type,first_spawn_s,respawn_s,hp,exp_reward
+Molten Fiend,Elite Creep,25,90,8029,300
+Horned Lizard,Common Creep,40,70,5450,220
+Fire Beetle,Common Creep,39,70,5450,220
+Lava Golem,Common Creep,31,70,5450,220
+Lithowanderer,Common Creep,48,60,2251,180
+Scavenger Crab,Common Creep,42,45,2550,170
+Scavenger Crab 2,Common Creep,42,45,2550,170
+Thunder Fenrir,Elite Creep,25,90,6646,300

@@ -1,0 +1,10 @@
+From/To,Base / Start,Thunder Fenrir (Blue Buff),Fire Beetle,Horned Lizard,Lithowanderer,Molten Fiend (Red Buff),Lava Golem,Scavenger Crab,Scavenger Crab 2
+Base / Start,0.00,0.47,0.56,0.54,0.65,0.43,0.49,0.71,0.82
+Thunder Fenrir (Blue Buff),0.47,0.00,0.47,0.13,0.36,0.36,0.33,0.29,0.60
+Fire Beetle,0.56,0.47,0.00,0.59,0.22,0.14,0.14,0.73,0.22
+Horned Lizard,0.54,0.13,0.59,0.00,0.47,0.49,0.45,0.18,0.72
+Lithowanderer,0.65,0.36,0.22,0.47,0.00,0.25,0.16,0.57,0.25
+Molten Fiend (Red Buff),0.43,0.36,0.14,0.49,0.25,0.00,0.09,0.64,0.35
+Lava Golem,0.49,0.33,0.14,0.45,0.16,0.09,0.00,0.59,0.31
+Scavenger Crab,0.71,0.29,0.73,0.18,0.57,0.64,0.59,0.00,0.82
+Scavenger Crab 2,0.78,0.60,0.22,0.72,0.25,0.35,0.31,0.82,0.00

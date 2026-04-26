@@ -1,0 +1,31 @@
+laptop,os,processor,python,hero,buff,algoritma,reached_lv4,total_time_s,total_xp,level_akhir,turtle_status,states,exec_avg_ms,exec_std_ms,exec_min_ms,exec_max_ms,repetitions
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Lancelot,Blue,greedy,Ya,101.9s,1090,4,AMAN,0,108.68,11.56,93.27,132.41,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Lancelot,Blue,backtracking,Ya,95.7s,1040,4,AMAN,107,130.38,21.63,107.9,201.07,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Lancelot,Blue,hybrid,Ya,95.7s,1040,4,AMAN,107,122.61,12.6,106.74,149.12,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Lancelot,Red,greedy,Ya,101.0s,1090,4,AMAN,0,110.3,16.77,93.07,154.04,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Lancelot,Red,backtracking,Ya,98.3s,1000,4,AMAN,107,123.17,13.51,106.37,145.38,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Lancelot,Red,hybrid,Ya,98.3s,1000,4,AMAN,107,123.74,12.27,107.71,147.27,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Suyou,Blue,greedy,Ya,99.7s,1090,4,AMAN,0,108.37,13.47,93.04,139.59,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Suyou,Blue,backtracking,Ya,93.8s,1000,4,AMAN,102,124.47,11.93,110.31,152.09,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Suyou,Blue,hybrid,Ya,93.8s,1000,4,AMAN,102,122.09,11.87,108.18,143.98,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Suyou,Red,greedy,Ya,99.6s,1090,4,AMAN,0,134.17,17.12,99.09,178.84,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Suyou,Red,backtracking,Ya,96.8s,1000,4,AMAN,98,158.13,13.68,126.98,195.34,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Suyou,Red,hybrid,Ya,96.8s,1000,4,AMAN,98,153.48,14.08,124.88,179.96,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Hayabusa,Blue,greedy,Ya,104.1s,1090,4,AMAN,0,137.09,23.55,113.19,236.65,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Hayabusa,Blue,backtracking,Ya,96.4s,1000,4,AMAN,118,159.35,11.12,140.27,188.56,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Hayabusa,Blue,hybrid,Ya,96.4s,1000,4,AMAN,118,161.34,14.22,137.21,193.94,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Hayabusa,Red,greedy,Ya,101.1s,1090,4,AMAN,0,132.97,11.53,115.39,153.6,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Hayabusa,Red,backtracking,Ya,95.4s,1000,4,AMAN,100,157.95,19.7,119.04,204.09,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Hayabusa,Red,hybrid,Ya,95.4s,1000,4,AMAN,100,152.23,14.52,125.27,182.79,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Yi Sun Shin,Blue,greedy,Ya,103.7s,1090,4,AMAN,0,136.91,13.67,105.62,162.23,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Yi Sun Shin,Blue,backtracking,Ya,95.0s,1000,4,AMAN,107,144.84,23.01,111.73,182.81,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Yi Sun Shin,Blue,hybrid,Ya,95.0s,1000,4,AMAN,107,124.76,13.17,107.07,155.49,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Yi Sun Shin,Red,greedy,Ya,99.6s,1090,4,AMAN,0,104.63,8.7,91.93,121.86,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Yi Sun Shin,Red,backtracking,Ya,95.0s,1000,4,AMAN,90,137.36,21.6,107.21,184.8,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Yi Sun Shin,Red,hybrid,Ya,95.0s,1000,4,AMAN,90,136.74,12.49,113.99,167.92,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Fredrinn,Blue,greedy,Ya,112.8s,1090,4,AMAN,0,106.2,13.46,88.81,131.04,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Fredrinn,Blue,backtracking,Ya,98.7s,1000,4,AMAN,94,145.19,15.76,111.06,187.94,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Fredrinn,Blue,hybrid,Ya,98.7s,1000,4,AMAN,94,146.28,8.48,132.35,162.35,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Fredrinn,Red,greedy,Ya,107.5s,1090,4,AMAN,0,121.58,7.95,107.61,137.92,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Fredrinn,Red,backtracking,Ya,100.7s,1000,4,AMAN,110,150.97,16.07,135.8,226.6,30
+Fariez,Windows 10,"AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",3.11.9,Fredrinn,Red,hybrid,Ya,100.7s,1000,4,AMAN,109,150.84,11.23,135.89,187.51,30
