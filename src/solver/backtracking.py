@@ -16,6 +16,8 @@ def solve_backtracking(
     method_label: str,
     verbose: bool = False,
     use_hybrid_ordering: bool = False,
+    max_branching: int | None = None,
+    max_expanded_states: int | None = None,
 ) -> dict:
     best_xp_rate = max(
         problem.camps[c]["xp"] / max(0.1, estimate_camp_clear_time(problem, c, problem.target_xp, 0, 0)["clear_time"])
@@ -67,6 +69,8 @@ def solve_backtracking(
 
     def backtrack(node: str, now: float, xp: float, retri: float, kills: dict[str, int], avail: dict[str, float], path: list[dict]) -> None:
         nonlocal expanded_states, best, blocked_by_time_limit, next_finish_if_forced
+        if max_expanded_states is not None and expanded_states >= max_expanded_states:
+            return
         expanded_states += 1
 
         if xp >= problem.target_xp:
@@ -131,6 +135,9 @@ def solve_backtracking(
             candidates.sort(key=lambda s: (-s["gained_xp"], travel_duration(s), s["finish_time"]))
             if verbose and candidates and initial_state["current_xp"] < problem.target_xp:
                 print(f"  [Greedy Pick] {candidates[0]['camp_id']} (EXP {int(candidates[0]['gained_xp'])})")
+
+        if max_branching is not None and max_branching > 0:
+            candidates = candidates[:max_branching]
 
         for step in candidates:
             if step["finish_time"] >= best["total_time"] or step["finish_time"] > problem.time_limit:

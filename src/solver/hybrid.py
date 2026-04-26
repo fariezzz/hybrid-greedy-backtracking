@@ -34,7 +34,7 @@ def solve_hybrid_greedy(problem: Problem, initial_state: dict, verbose: bool = F
             print(f"\n[Step {len(state['steps']) + 1}] Dari {state['current_node']}:")
             for cand in candidates:
                 print(
-                    f"  -> {cand['camp_id']:<28} | EXP/Travel: {hybrid_candidate_score(cand):.2f} | "
+                    f"  -> {cand['camp_id']:<28} | EXP/Step: {hybrid_candidate_score(cand):.2f} | "
                     f"EXP: {int(cand['gained_xp'])} | Jarak: {travel_duration(cand):.1f}s | Clear: {cand['clear_time']:.1f}s"
                 )
 
@@ -65,13 +65,19 @@ def solve_hybrid_greedy(problem: Problem, initial_state: dict, verbose: bool = F
 
 def solve_hybrid(problem: Problem, initial_state: dict, verbose: bool = False) -> dict:
     greedy_result = solve_hybrid_greedy(problem, initial_state, verbose)
+    bounded_search = greedy_result["reached_target"]
+    max_branching = 6 if bounded_search else None
+    max_expanded_states = max(80, problem.max_steps * len(problem.camp_order) * 2) if bounded_search else None
+
     backtracking_result = solve_backtracking(
         problem,
         initial_state,
         greedy_result if greedy_result["reached_target"] else None,
         "Hybrid Greedy-Backtracking",
         verbose,
-        use_hybrid_ordering=False,
+        use_hybrid_ordering=True,
+        max_branching=max_branching,
+        max_expanded_states=max_expanded_states,
     )
     if backtracking_result["reached_target"]:
         return backtracking_result

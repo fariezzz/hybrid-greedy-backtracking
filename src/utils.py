@@ -50,4 +50,5 @@ def travel_duration(step: dict[str, Any]) -> float:
 
 
 def hybrid_candidate_score(step: dict[str, Any]) -> float:
-    return step["gained_xp"] / max(0.1, travel_duration(step))
+    total_step_time = step["finish_time"] - step["depart_time"]
+    return step["gained_xp"] / max(0.1, total_step_time)

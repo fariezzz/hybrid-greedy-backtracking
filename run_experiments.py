@@ -18,7 +18,7 @@ from pathlib import Path
 HEROES     = ['Lancelot', 'Suyou', 'Hayabusa', 'Yi Sun Shin', 'Fredrinn']
 ALGORITHMS = ['greedy', 'backtracking', 'hybrid']
 BUFFS      = ['blue', 'red']
-REPETITIONS = 30          # jumlah repetisi per skenario
+REPETITIONS = 10          # jumlah repetisi per skenario
 SIMULATOR   = 'simulator.py'
 OUTPUT_CSV  = 'hasil_eksperimen.csv'
 # =============================================
