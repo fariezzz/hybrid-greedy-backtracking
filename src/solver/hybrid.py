@@ -65,9 +65,6 @@ def solve_hybrid_greedy(problem: Problem, initial_state: dict, verbose: bool = F
 
 def solve_hybrid(problem: Problem, initial_state: dict, verbose: bool = False) -> dict:
     greedy_result = solve_hybrid_greedy(problem, initial_state, verbose)
-    bounded_search = greedy_result["reached_target"]
-    max_branching = 6 if bounded_search else None
-    max_expanded_states = max(80, problem.max_steps * len(problem.camp_order) * 2) if bounded_search else None
 
     backtracking_result = solve_backtracking(
         problem,
@@ -76,8 +73,8 @@ def solve_hybrid(problem: Problem, initial_state: dict, verbose: bool = False) -
         "Hybrid Greedy-Backtracking",
         verbose,
         use_hybrid_ordering=True,
-        max_branching=max_branching,
-        max_expanded_states=max_expanded_states,
+        max_branching=None,
+        max_expanded_states=None,
     )
     if backtracking_result["reached_target"]:
         return backtracking_result
