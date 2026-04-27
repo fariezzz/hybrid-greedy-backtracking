@@ -3,171 +3,137 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MLBB Jungle Route Lab</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>MLBB Jungle Route Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .map-node {
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        border-radius: 9999px;
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        transform: translate(-50%, -50%);
+        font-size: 11px;
+        font-weight: 700;
+        color: #fff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+      }
+      .map-node.selected {
+        outline: 3px solid #fde047;
+        outline-offset: 2px;
+      }
+      .map-node.in-route {
+        box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.4);
+      }
+      .route-line {
+        fill: none;
+        stroke: #38bdf8;
+        stroke-width: 0.7;
+        stroke-dasharray: 7 5;
+      }
+      .route-step-badge {
+        fill: #f8fafc;
+        stroke: #0f172a;
+        stroke-width: 0.35;
+      }
+      .route-step-text {
+        fill: #0f172a;
+        font-size: 2.3px;
+        text-anchor: middle;
+        dominant-baseline: middle;
+        font-weight: 700;
+      }
+    </style>
   </head>
-  <body>
-    <div class="page-bg"></div>
-    <div class="app-shell">
-      <header class="topbar">
-        <div>
-          <p class="eyebrow">Aplikasi Kalkulasi Rute Jungling</p>
-          <h1>MLBB Jungle Route Lab</h1>
-        </div>
-        <p class="subtitle">
-          Node peta bisa diklik, bisa diaktif/nonaktifkan, lalu dihitung dengan
-          Greedy, Backtracking, atau Hybrid Greedy-Backtracking.
-        </p>
+  <body class="min-h-screen bg-slate-950 text-slate-100">
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_15%_15%,rgba(14,165,233,0.18),transparent_30%),radial-gradient(circle_at_85%_10%,rgba(251,191,36,0.16),transparent_28%),linear-gradient(180deg,#020617,#0b1220)]"></div>
+
+    <main class="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <header class="mb-5 rounded-2xl border border-slate-700/70 bg-slate-900/60 p-5 backdrop-blur">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">Strategi Algoritma UAS</p>
+        <h1 class="mt-1 text-2xl font-bold sm:text-3xl">MLBB Jungle Route Web Simulator</h1>
+        <p class="mt-2 text-sm text-slate-300">Input user disederhanakan: pilih hero dan buff awal. Logika mengikuti simulator Python yang sekarang.</p>
       </header>
 
-      <main class="layout">
-        <section class="panel controls-panel">
-          <h2>Konfigurasi</h2>
-          <form id="config-form" class="form-grid">
-            <label>
-              Algoritma
-              <select id="algorithm" name="algorithm">
-                <option value="greedy">Greedy</option>
-                <option value="backtracking">Backtracking</option>
-                <option value="hybrid" selected>Hybrid Greedy-Backtracking</option>
+      <div id="dataset-status" class="mb-4 rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-slate-300">Memuat dataset...</div>
+
+      <section class="grid gap-4 lg:grid-cols-12">
+        <aside class="lg:col-span-3 space-y-4">
+          <form id="config-form" class="rounded-2xl border border-slate-700 bg-slate-900/70 p-4">
+            <h2 class="mb-3 text-lg font-semibold">Input User</h2>
+
+            <label class="mb-3 block text-sm">
+              <span class="mb-1 block text-slate-300">Hero</span>
+              <select id="hero-select" class="w-full rounded-lg border border-slate-600 bg-slate-950 px-3 py-2"></select>
+            </label>
+
+            <label class="mb-4 block text-sm">
+              <span class="mb-1 block text-slate-300">Mulai Dari Buff</span>
+              <select id="start-buff" class="w-full rounded-lg border border-slate-600 bg-slate-950 px-3 py-2">
+                <option value="blue">Biru dulu</option>
+                <option value="red">Merah dulu</option>
               </select>
             </label>
 
-            <label>
-              Hero Jungler
-              <select id="hero-select" name="hero"></select>
-            </label>
-
-            <label>
-              Movement Speed
-              <input
-                id="move-speed"
-                name="moveSpeed"
-                type="number"
-                min="220"
-                max="320"
-                step="1"
-                value="260"
-              />
-            </label>
-
-            <label>
-              Target XP
-              <input
-                id="target-xp"
-                name="targetXp"
-                type="number"
-                min="100"
-                max="3000"
-                step="10"
-                value="1000"
-              />
-            </label>
-
-            <label>
-              Maksimal Step
-              <input
-                id="max-steps"
-                name="maxSteps"
-                type="number"
-                min="1"
-                max="14"
-                step="1"
-                value="7"
-              />
-            </label>
-
-            <div class="actions">
-              <button type="submit" class="btn primary">Hitung Rute</button>
-              <button type="button" id="reset-btn" class="btn ghost">
-                Reset Node
-              </button>
-            </div>
+            <button type="submit" class="w-full rounded-lg bg-sky-500 px-3 py-2 text-sm font-semibold text-slate-950 transition hover:bg-sky-400">Hitung Semua Algoritma</button>
           </form>
 
-          <div class="quick-stats">
-            <div class="stat">
-              <span class="label">Start Node</span>
-              <span id="start-node-label" class="value">Base</span>
-            </div>
-            <div class="stat">
-              <span class="label">Node Aktif</span>
-              <span id="active-count-label" class="value">7</span>
-            </div>
-          </div>
-        </section>
+          <div id="hero-summary-card" class="rounded-2xl border border-slate-700 bg-slate-900/70 p-4 text-sm text-slate-300">Pilih hero untuk melihat atribut final.</div>
 
-        <section class="panel map-panel">
-          <h2>Peta Interaktif</h2>
-          <div class="map-frame" id="map-frame" aria-label="Peta MLBB">
-            <img id="map-image" src="../assets/image.png" alt="Peta Mobile Legends" />
-            <svg
-              id="route-layer"
-              class="route-layer"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
+          <div id="selected-node-card" class="rounded-2xl border border-slate-700 bg-slate-900/70 p-4 text-sm text-slate-300">Klik node di peta untuk lihat detail camp.</div>
+        </aside>
+
+        <section class="lg:col-span-5 rounded-2xl border border-slate-700 bg-slate-900/70 p-4">
+          <h2 class="mb-3 text-lg font-semibold">Peta Route</h2>
+          <div class="relative aspect-[563/500] overflow-hidden rounded-xl border border-slate-700 bg-slate-950">
+            <img src="../assets/image.png" alt="Peta MLBB" class="h-full w-full object-cover" />
+            <svg id="route-layer" class="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
               <defs>
-                <marker
-                  id="route-arrow"
-                  markerWidth="10"
-                  markerHeight="10"
-                  refX="8"
-                  refY="5"
-                  orient="auto"
-                >
-                  <path d="M0,0 L10,5 L0,10 z" fill="#00f5d4"></path>
+                <marker id="route-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"></path>
                 </marker>
               </defs>
               <g id="route-path-group"></g>
             </svg>
-            <div id="nodes-layer" class="nodes-layer"></div>
+            <div id="nodes-layer" class="absolute inset-0"></div>
           </div>
-          <p class="map-hint">
-            Klik node untuk detail. Double-click node untuk jadikan Start.
-          </p>
+          <p class="mt-2 text-xs text-slate-400">Node selalu tampil. Route yang terpilih akan di-highlight.</p>
         </section>
 
-        <section class="panel side-panel">
-          <h2>Detail Node</h2>
-          <div id="selected-node-card" class="node-card empty">
-            Pilih node di peta untuk melihat detail.
-          </div>
-          <div class="node-actions">
-            <button id="set-start-btn" class="btn secondary" disabled>
-              Jadikan Start
-            </button>
-            <button id="toggle-node-btn" class="btn secondary" disabled>
-              Nonaktifkan Node
-            </button>
-          </div>
+        <section class="lg:col-span-4 rounded-2xl border border-slate-700 bg-slate-900/70 p-4">
+          <h2 class="mb-3 text-lg font-semibold">Ringkasan Algoritma</h2>
+          <div id="result-summary" class="space-y-2 text-sm text-slate-300">Belum ada simulasi.</div>
 
-          <h2>Hasil Simulasi</h2>
-          <div id="result-summary" class="result-card empty">
-            Belum ada simulasi.
+          <h3 class="mt-5 mb-2 text-sm font-semibold uppercase tracking-wide text-slate-400">Detail Step Algoritma Terpilih</h3>
+          <div class="mb-2 flex gap-2">
+            <button type="button" data-view="greedy" class="view-btn rounded-lg border border-slate-600 px-2 py-1 text-xs">Greedy</button>
+            <button type="button" data-view="backtracking" class="view-btn rounded-lg border border-slate-600 px-2 py-1 text-xs">Backtracking</button>
+            <button type="button" data-view="hybrid" class="view-btn rounded-lg border border-slate-600 px-2 py-1 text-xs">Hybrid</button>
           </div>
-
-          <div class="table-wrap">
-            <table id="steps-table">
-              <thead>
+          <div class="max-h-72 overflow-auto rounded-lg border border-slate-700">
+            <table class="min-w-full text-xs">
+              <thead class="sticky top-0 bg-slate-900 text-slate-300">
                 <tr>
-                  <th>#</th>
-                  <th>Dari</th>
-                  <th>Ke</th>
-                  <th>Arrive</th>
-                  <th>Wait</th>
-                  <th>Finish</th>
-                  <th>Total XP</th>
+                  <th class="px-2 py-2 text-left">#</th>
+                  <th class="px-2 py-2 text-left">Dari</th>
+                  <th class="px-2 py-2 text-left">Ke</th>
+                  <th class="px-2 py-2 text-left">Tiba</th>
+                  <th class="px-2 py-2 text-left">Tunggu</th>
+                  <th class="px-2 py-2 text-left">Clear</th>
+                  <th class="px-2 py-2 text-left">Selesai</th>
+                  <th class="px-2 py-2 text-left">XP</th>
                 </tr>
               </thead>
               <tbody id="steps-body"></tbody>
             </table>
           </div>
         </section>
-      </main>
-    </div>
+      </section>
+    </main>
 
-    <script src="app.js"></script>
+    <script src="web-simulator.js"></script>
   </body>
 </html>

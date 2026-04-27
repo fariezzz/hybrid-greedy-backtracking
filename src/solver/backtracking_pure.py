@@ -45,7 +45,7 @@ def solve_backtracking_pure(
                 }
             return
 
-        # Check: Sudah melewati max steps atau time limit
+       
         if len(path) >= problem.max_steps or now > problem.time_limit:
             return
 
@@ -62,7 +62,7 @@ def solve_backtracking_pure(
         if not candidates:
             return
 
-        # Recursively explore all candidates
+       
         for step in candidates:
             if step["finish_time"] > problem.time_limit:
                 continue
