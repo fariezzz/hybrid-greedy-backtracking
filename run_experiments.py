@@ -20,7 +20,6 @@ ALGORITHMS = ['greedy', 'backtracking', 'hybrid']
 BUFFS      = ['blue', 'red']
 REPETITIONS = 30          # jumlah repetisi per skenario
 SIMULATOR   = 'simulator.py'
-OUTPUT_CSV  = 'hasil_eksperimen.csv'
 # =============================================
 
 def get_device_info():
@@ -78,6 +77,8 @@ def main():
     laptop_name = input("Nama laptop ini (misal: Laptop_A atau Laptop_B): ").strip()
     if not laptop_name:
         laptop_name = "Unknown"
+        
+    OUTPUT_CSV  = 'eksperimen_' + laptop_name + '.csv'
 
     rows = []
     scenario_num = 0
