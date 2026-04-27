@@ -1,0 +1,31 @@
+laptop,os,processor,python,hero,buff,algoritma,reached_lv4,total_time_s,total_xp,level_akhir,turtle_status,states,exec_avg_ms,exec_std_ms,exec_min_ms,exec_max_ms,repetitions
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Lancelot,Blue,greedy,Ya,101.9s,1090,4,AMAN,0,152.03,27.83,129.41,249.45,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Lancelot,Blue,backtracking,Ya,95.7s,1040,4,AMAN,107,173.23,25.32,150.73,278.57,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Lancelot,Blue,hybrid,Ya,95.7s,1040,4,AMAN,104,156.25,6.31,145.18,171.73,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Lancelot,Red,greedy,Ya,101.0s,1090,4,AMAN,0,140.79,10.2,127.3,187.16,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Lancelot,Red,backtracking,Ya,98.3s,1000,4,AMAN,107,161.59,19.47,144.07,256.53,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Lancelot,Red,hybrid,Ya,98.3s,1000,4,AMAN,100,153.16,6.78,144.49,166.76,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Suyou,Blue,greedy,Ya,99.7s,1090,4,AMAN,0,131.75,5.25,125.73,148.3,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Suyou,Blue,backtracking,Ya,93.8s,1000,4,AMAN,102,154.57,21.89,142.17,251.15,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Suyou,Blue,hybrid,Ya,93.8s,1000,4,AMAN,88,156.52,6.25,145.84,174.94,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Suyou,Red,greedy,Ya,99.6s,1090,4,AMAN,0,142.64,16.42,128.27,221.43,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Suyou,Red,backtracking,Ya,96.8s,1000,4,AMAN,98,149.37,7.92,140.06,166.69,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Suyou,Red,hybrid,Ya,96.8s,1000,4,AMAN,95,157.25,24.47,141.21,271.24,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Hayabusa,Blue,greedy,Ya,104.1s,1090,4,AMAN,0,138.99,8.47,126.45,162.14,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Hayabusa,Blue,backtracking,Ya,96.4s,1000,4,AMAN,118,162.19,11.32,146.87,192.64,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Hayabusa,Blue,hybrid,Ya,96.4s,1000,4,AMAN,117,167.49,22.77,145.5,255.51,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Hayabusa,Red,greedy,Ya,101.1s,1090,4,AMAN,0,141.15,4.72,133.01,154.0,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Hayabusa,Red,backtracking,Ya,95.4s,1000,4,AMAN,100,152.42,4.94,141.4,166.07,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Hayabusa,Red,hybrid,Ya,95.4s,1000,4,AMAN,96,151.95,4.44,144.68,162.37,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Yi Sun Shin,Blue,greedy,Ya,103.7s,1090,4,AMAN,0,137.11,10.55,126.17,183.58,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Yi Sun Shin,Blue,backtracking,Ya,95.0s,1000,4,AMAN,107,149.77,14.97,140.95,219.93,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Yi Sun Shin,Blue,hybrid,Ya,95.0s,1000,4,AMAN,109,155.95,9.94,143.87,177.86,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Yi Sun Shin,Red,greedy,Ya,99.6s,1090,4,AMAN,0,134.79,6.53,125.33,149.18,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Yi Sun Shin,Red,backtracking,Ya,95.0s,1000,4,AMAN,90,153.31,10.27,143.33,198.07,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Yi Sun Shin,Red,hybrid,Ya,95.0s,1000,4,AMAN,85,149.79,17.46,138.76,238.18,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Fredrinn,Blue,greedy,Ya,112.8s,1090,4,AMAN,0,134.3,5.53,127.0,147.64,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Fredrinn,Blue,backtracking,Ya,98.7s,1000,4,AMAN,94,148.01,5.31,140.69,161.57,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Fredrinn,Blue,hybrid,Ya,98.7s,1000,4,AMAN,117,160.75,15.96,149.94,239.48,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Fredrinn,Red,greedy,Ya,107.5s,1090,4,AMAN,0,133.5,11.18,126.22,188.75,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Fredrinn,Red,backtracking,Ya,100.7s,1000,4,AMAN,110,158.84,17.76,143.76,244.5,30
+Fadhlan,Windows 10,"Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",3.12.10,Fredrinn,Red,hybrid,Ya,100.7s,1000,4,AMAN,110,158.37,6.07,148.77,174.84,30

@@ -15,6 +15,7 @@ from src.data import (
 )
 from src.engine import build_initial_state
 from src.solver.backtracking import solve_backtracking
+from src.solver.backtracking_pure import solve_backtracking_pure
 from src.solver.greedy import solve_greedy
 from src.solver.hybrid import solve_hybrid
 from src.utils import level_from_xp, normalize_name, round1
@@ -176,7 +177,7 @@ def main() -> None:
     if algorithm == "greedy":
         result = solve_greedy(problem, initial_state, verbose)
     elif algorithm == "backtracking":
-        result = solve_backtracking(problem, initial_state, None, "Backtracking", verbose)
+        result = solve_backtracking_pure(problem, initial_state, verbose)
     else:
         result = solve_hybrid(problem, initial_state, verbose)
 
